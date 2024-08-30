@@ -7,11 +7,15 @@
 #include "../inc/cNgn.h"
 
 //--------------------------------------------------------------------------------------------------
+//#define TIMING 1
+
+//--------------------------------------------------------------------------------------------------
 cNgn* cNgn::m_pApp = 0;
 
 //--------------------------------------------------------------------------------------------------
 void cNgn::MainLoop(void) {
 
+#ifdef TIMING 
     m_fNow = GetTime();
     if (m_fNow - m_fStart > 1.0f) {
         m_fps = m_uiFrames / (m_fNow - m_fStart);
@@ -19,26 +23,27 @@ void cNgn::MainLoop(void) {
         m_uiFrames = 0;
     }
 
-    //--------------------------------------------------
-    // call to virtual function to render  the frame
-    RenderFrame();
-    //--------------------------------------------------
+#endif
 
+    // call virtual function to render the frame
+    RenderFrame();
+
+    // blit back buffer
     HDC hdc = GetDC(m_hWnd);
     BitBlt(hdc, 0, 0, m_iWndWid, m_iWndHei, m_hBackDC, 0, 0, SRCCOPY);
     ReleaseDC(m_hWnd, hdc);
 
+#ifdef TIMING
     m_uiFrames++;
     m_fFrameTime = GetTime() - m_fNow;
     if (m_fFrameTime > 1.0f) m_fFrameTime = 1.0f;
 
-#ifdef _DEBUG
     WCHAR txt[64];
     swprintf_s(txt, 64, L"+++ %.2f +++", m_fps);
     SetWindowText(m_hWnd, txt);
-#endif
-
     m_fTimeCount += m_fFrameTime;
+
+#endif
 }
 //--------------------------------------------------------------------------------------------------
 void cNgn::OnPaint(HWND hWnd) {
@@ -138,8 +143,7 @@ int cNgn::Run(HINSTANCE hInst) {
     MSG msg;
     CLEAR_THIS(&msg);
 
-    while (msg.message != WM_QUIT)
-    {
+    while (msg.message != WM_QUIT) {
         if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
             DispatchMessage(&msg);
         else MainLoop();

@@ -1,4 +1,10 @@
 //--------------------------------------------------------------------------------------------------
+// ++ Author: PJ81
+// ++ Date: 28.08.2024
+//--------------------------------------------------------------------------------------------------
+#pragma once
+
+//--------------------------------------------------------------------------------------------------
 #include <Windows.h>
 #include "../res/resource.h"
 #include "../inc/cRand.h"
@@ -12,23 +18,23 @@ public:
     ~cNgn(void);
 
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ public functions
-    int										Run(HINSTANCE hInst);
-    virtual void                            RenderFrame() = 0;
-    virtual void                            Initialize() = 0;
+    int										Run                                             (HINSTANCE hInst);
+    virtual void                            RenderFrame                                     (void) = 0;
+    virtual void                            Initialize                                      (void) = 0;
 
     //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ private functions
 private:
-    BOOL                                    OnCreate(HWND hWnd, LPCREATESTRUCT lpCreateStruct);
-    void                                    OnDestroy(HWND hWnd);
-    void                                    OnPaint(HWND hWnd);
-    BOOL                                    RegisterMyClass(void);
-    void                                    SetupWindow(int w, int h);
-    bool                                    IsRunning(void);
-    bool									CreateBackbuffer(void);
-    float                                   GetTime(void);
-    void									MainLoop(void);
+    BOOL                                    OnCreate                                        (HWND hWnd, LPCREATESTRUCT lpCreateStruct);
+    void                                    OnDestroy                                       (HWND hWnd);
+    void                                    OnPaint                                         (HWND hWnd);
+    BOOL                                    RegisterMyClass                                 (void);
+    void                                    SetupWindow                                     (int w, int h);
+    bool                                    IsRunning                                       (void);
+    bool									CreateBackbuffer                                (void);
+    float                                   GetTime                                         (void);
+    void									MainLoop                                        (void);
 
-    static int WINAPI						ngnMain(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+    static int WINAPI						ngnMain                                         (HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
     //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ private variables
 private:

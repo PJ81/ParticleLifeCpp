@@ -91,6 +91,20 @@ IDB_BITMAP5             BITMAP                  "D:\\##_Desktop_##\\testes\\part
 
 IDB_BITMAP6             BITMAP                  "D:\\##_Desktop_##\\testes\\particles\\paricles\\bmp\\y.bmp"
 
+IDB_BITMAP7             BITMAP                  "bc.bmp"
+
+IDB_BITMAP8             BITMAP                  "cc.bmp"
+
+IDB_BITMAP9             BITMAP                  "gc.bmp"
+
+IDB_BITMAP10            BITMAP                  "mc.bmp"
+
+IDB_BITMAP11            BITMAP                  "rc.bmp"
+
+IDB_BITMAP12            BITMAP                  "yc.bmp"
+
+IDB_BITMAP13            BITMAP                  "msk.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //

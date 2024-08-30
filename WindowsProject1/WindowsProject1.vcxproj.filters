@@ -79,6 +79,48 @@
     <Image Include="..\..\..\..\##_Desktop_##\testes\particles\paricles\bmp\y.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="bc.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="cc.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="gc.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="mc.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="rc.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="yc.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="msk.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bc.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\cc.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\gc.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\mc.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\rc.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\yc.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\msk.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="res\cParticleLife.rc">

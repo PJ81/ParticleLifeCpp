@@ -4,6 +4,7 @@
 //--------------------------------------------------------------------------------------------------
 #pragma once
 
+//--------------------------------------------------------------------------------------------------
 #include "../inc/stdafx.h"
 
 //--------------------------------------------------------------------------------------------------
@@ -11,43 +12,43 @@ class cVector {
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ ctor
 public:
-	cVector();
-	cVector(float _x, float _y);
+	cVector																					(void);
+	cVector																					(float _x, float _y);
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ public variables
-	float x, y;  // Class variables to store the x and y coordinates
+	float																					x, y;  // Class variables to store the x and y coordinates
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ public functions
-	float angle(const cVector& o) const;
-	float cross(const cVector& o) const;
-	float distance(const cVector& o) const;
-	float distanceSqr(const cVector& o) const;
-	float dot(const cVector& o) const;
-	bool isZero() const;
-	float length() const;
-	float lengthSqr() const;
-	void normalize();
+	float									angle											(const cVector& o) const;
+	float									cross											(const cVector& o) const;
+	float									distance										(const cVector& o) const;
+	float									distanceSqr										(const cVector& o) const;
+	float									dot												(const cVector& o) const;
+	bool									isZero											(void) const;
+	float									length											(void) const;
+	float									lengthSqr										(void) const;
+	void									normalize();
 
-	bool operator !=(const cVector& o) const;
-	cVector operator *(float a) const;
-	cVector& operator *=(float a);
-	cVector operator +(const cVector& o) const;
-	void operator +=(const cVector& o);
-	cVector operator -(const cVector& o) const;
-	void operator -=(const cVector& o);
-	cVector operator /(float a) const;
-	cVector& operator /=(float a);
-	cVector& operator =(const cVector& o);
-	bool operator ==(const cVector& o) const;
+	bool									operator !=										(const cVector& o) const;
+	cVector									operator *										(float a) const;
+	cVector&								operator *=										(float a);
+	cVector									operator +										(const cVector& o) const;
+	void									operator +=										(const cVector& o);
+	cVector									operator -										(const cVector& o) const;
+	void									operator -=										(const cVector& o);
+	cVector									operator /										(float a) const;
+	cVector&								operator /=										(float a);
+	cVector&								operator =										(const cVector& o);
+	bool									operator ==										(const cVector& o) const;
 
-	void rotate(float a);
-	void rotate(float cosA, float sinA);
-	void set(float _x, float _y);
-	void zero();
+	void									rotate											(float a);
+	void									rotate											(float cosA, float sinA);
+	void									set												(float _x, float _y);
+	void									zero											(void);
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ private variables
 private:
-	static constexpr float epsilon = 1e-6f; // Small value to handle floating point precision issues
+	static constexpr float																	epsilon = 1e-6f; // Small value to handle floating point precision issues
 };
 //--------------------------------------------------------------------------------------------------
 // Default constructor that initializes the vector to (0, 0)

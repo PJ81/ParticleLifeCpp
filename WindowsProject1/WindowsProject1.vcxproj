@@ -42,7 +42,21 @@
     <Image Include="..\..\..\..\##_Desktop_##\testes\particles\paricles\bmp\m.bmp" />
     <Image Include="..\..\..\..\##_Desktop_##\testes\particles\paricles\bmp\r.bmp" />
     <Image Include="..\..\..\..\##_Desktop_##\testes\particles\paricles\bmp\y.bmp" />
+    <Image Include="bc.bmp" />
+    <Image Include="cc.bmp" />
+    <Image Include="gc.bmp" />
+    <Image Include="mc.bmp" />
+    <Image Include="msk.bmp" />
+    <Image Include="rc.bmp" />
+    <Image Include="res\bc.bmp" />
+    <Image Include="res\cc.bmp" />
+    <Image Include="res\gc.bmp" />
     <Image Include="res\icon.ico" />
+    <Image Include="res\mc.bmp" />
+    <Image Include="res\msk.bmp" />
+    <Image Include="res\rc.bmp" />
+    <Image Include="res\yc.bmp" />
+    <Image Include="yc.bmp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="res\cParticleLife.rc" />

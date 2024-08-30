@@ -1,4 +1,3 @@
-
 //--------------------------------------------------------------------------------------------------
 // ++ Author: PJ81
 // ++ Date: 28.08.2024
@@ -18,11 +17,11 @@ void cParticleLife::RenderFrame(void) {
     cParticle p;
     for (int x = 0; x < MAX_POP; x++) {
         p = m_Particles[x];
-        BitBlt(m_hBackDC, (int)p.pos.x, (int)p.pos.y, 3, 3, m_hDCs[p.type], 0, 0, SRCCOPY);
+        BitBlt(m_hBackDC, (int)p.pos.x, (int)p.pos.y, 5, 5, m_hDCs[7], 0, 0, SRCAND);
+        BitBlt(m_hBackDC, (int)p.pos.x, (int)p.pos.y, 5, 5, m_hDCs[p.type], 0, 0, SRCPAINT);
     }
 
-    SHORT space = GetAsyncKeyState(VK_SPACE);
-    if ((1 << 15) & space) {
+    if ((1 << 15) & GetAsyncKeyState(VK_SPACE)) {
         CreateRules();
     }
 }
@@ -58,7 +57,7 @@ void cParticleLife::UpdateParticles() {
             }
 
             if (d < behavior.repel.radius) {
-                force = dir * behavior.repel.force*3;
+                force = dir * behavior.repel.force * 5;
                 force *= .05f;
                 totForce += force;
             }
@@ -75,13 +74,20 @@ void cParticleLife::UpdateParticles() {
 }
 //--------------------------------------------------------------------------------------------------
 void cParticleLife::CreateParticles(void) {
-    for (int x = 0; x < MAX_POP; x++) {
-        m_Particles[x].type = rand() % MAX_TYPES;
-        m_Particles[x].pos.set((float)(rand() % m_iWndWid), (float)(rand() % m_iWndHei));
+
+    int np = MAX_POP / MAX_TYPES, i;
+
+    for (int a = 0; a < MAX_TYPES; a++) {
+        i = np * a;
+        for (int x = 0; x < np; x++) {
+            m_Particles[x + i].type = a;// rand() % MAX_TYPES;
+            m_Particles[x + i].pos.set((float)(rand() % m_iWndWid), (float)(rand() % m_iWndHei));
+        }
     }
 }
 //--------------------------------------------------------------------------------------------------
 void cParticleLife::CreateRules(void) {
+
     for (int y = 0; y < MAX_TYPES; y++) {
         for (int x = 0; x < MAX_TYPES; x++) {
 
@@ -97,8 +103,8 @@ void cParticleLife::CreateRules(void) {
 //--------------------------------------------------------------------------------------------------
 void cParticleLife::Initialize() {
 
-    for (int x = 0; x < 6; x++) {
-        m_hBits[x] = LoadImage(m_hInst, MAKEINTRESOURCE(x + IDB_BITMAP1), IMAGE_BITMAP, 0, 0, 0);
+    for (int x = 0; x < 7; x++) {
+        m_hBits[x] = LoadImage(m_hInst, MAKEINTRESOURCE(x + IDB_BITMAP7), IMAGE_BITMAP, 0, 0, 0);
         m_hDCs[x] = CreateCompatibleDC(0);
 
         SelectObject(m_hDCs[x], m_hBits[x]);

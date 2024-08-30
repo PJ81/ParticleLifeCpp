@@ -12,13 +12,13 @@ class cParticle {
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ ctor / dtor
 public:
-	cParticle(void);
-	~cParticle(void);
+	cParticle																				(void);
+	~cParticle																				(void);
 	
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ public variables
-	cVector pos;
-	cVector vel;
-	int type;
+	cVector																					pos;
+	cVector																					vel;
+	int																						type;
 };
 //--------------------------------------------------------------------------------------------------
 inline cParticle::cParticle() {

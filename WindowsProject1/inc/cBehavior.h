@@ -12,12 +12,12 @@ class cRule {
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ ctor / dtor
 public:
-	cRule(void);
-	~cRule(void);
-	void set(float r, float f);
+	cRule																					(void);
+	~cRule																					(void);
+	void									set												(float r, float f);
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ public variables
-	float radius, force;
+	float																					radius, force;
 };
 //--------------------------------------------------------------------------------------------------
 inline cRule::cRule() {
