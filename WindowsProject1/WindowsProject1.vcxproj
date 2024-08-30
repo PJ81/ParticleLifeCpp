@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="inc\cBehavior.h" />
+    <ClInclude Include="inc\cNgn.h" />
     <ClInclude Include="inc\cParticle.h" />
     <ClInclude Include="inc\cParticleLife.h" />
     <ClInclude Include="inc\cRand.h" />
@@ -29,6 +30,7 @@
     <ClInclude Include="res\resource.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\cNgn.cpp" />
     <ClCompile Include="src\cParticleLife.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\stdafx.cpp" />

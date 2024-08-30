@@ -16,7 +16,7 @@ int APIENTRY _tWinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpC
 	{
 		srand( GetTickCount() );
 
-		cParticleLife* life  = new cParticleLife();
+		cParticleLife* life  = new cParticleLife(1280, 800);
 
 		if( life ) {
 			int p = 1;
